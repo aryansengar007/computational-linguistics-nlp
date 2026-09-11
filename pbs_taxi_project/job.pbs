@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -N file_name               
+#PBS -o file_out                
+#PBS -e file_err                
+#PBS -l select=1:ncpus=10          
+#PBS -q workq
+
+cd $PBS_0_WORKDIR
+NPROCS='wc -l < $PBS_NODEFILE'
+
+source /opt/intel/oneapi/setvars.sh
+source /opt/intel/oneapi/intelpython/bin/activate
+
+conda activate tensorflow
+
+cd /home/path_to_file
+
+ipython file.py
+

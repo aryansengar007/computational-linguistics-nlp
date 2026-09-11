@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#PBS -S /bin/bash
+#PBS -N taxi_benchmark
+#PBS -o taxi_output.txt
+#PBS -e taxi_error.txt
+#PBS -l select=1:ncpus=10
+#PBS -q workq
+
+cd $PBS_O_WORKDIR
+
+# Load Intel oneAPI environment
+source /opt/intel/oneapi/setvars.sh
+
+# Activate Intel Python
+source /opt/intel/oneapi/intelpython/bin/activate
+
+# Activate Conda environment
+conda activate tensorflow
+
+# Show environment information for debugging
+echo "===== ENVIRONMENT ====="
+hostname
+which python
+python --version
+echo "======================="
+
+# Run benchmark
+ipython taxi_benchmark.py

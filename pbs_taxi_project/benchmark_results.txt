@@ -1,0 +1,12 @@
+NYC Yellow Taxi Benchmark
+=========================
+Rows processed: 2,839,388
+Load Time: 0.4369 sec
+Missing Analysis Time: 0.1898 sec
+Duplicate Removal Time: 2.4180 sec
+Missing Value Cleaning: 1.3112 sec
+Date/Time Conversion: 0.0161 sec
+Invalid Value Cleaning: 0.6255 sec
+Trip Duration Processing: 0.2548 sec
+Save Time: 0.8701 sec
+TOTAL TIME: 6.1229 sec
